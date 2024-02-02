@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GEngine">
+      <UniqueIdentifier>{023A1B06-6E19-9AA1-7731-2578E38F0003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GEngine\Events">
+      <UniqueIdentifier>{A64FEF47-921D-E34D-7BB1-5374671EBFB2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="scr\GEngine\Application.h">
+      <Filter>GEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Core.h">
+      <Filter>GEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\EntryPoint.h">
+      <Filter>GEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Events\ApplicationEvnet.h">
+      <Filter>GEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Events\Event.h">
+      <Filter>GEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Events\KeyEvent.h">
+      <Filter>GEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Events\MouseEvent.h">
+      <Filter>GEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\GEngine\Log.h">
+      <Filter>GEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\gengine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="scr\GEngine\Application.cpp">
+      <Filter>GEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\GEngine\Log.cpp">
+      <Filter>GEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="scr\GEngine\TheKnowLedge.cpp">
+      <Filter>GEngine</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
