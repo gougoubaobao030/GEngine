@@ -1,6 +1,5 @@
 #pragma once
 #include "Event.h"
-#include <sstream>
 namespace GEngine {
 
 	class WIN_API WindowResizeEvnet : public Event {

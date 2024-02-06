@@ -10,6 +10,13 @@ workspace "GEngine2"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+--Include directories relative to root folder(solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "GEngine2/vendor/GLFW/include"
+
+--include premake.lua file of glfw
+include "GEngine2/vendor/GLFW"
+
 project "GEngine2"
     location "GEngine2"
     kind "SharedLib"
@@ -17,6 +24,9 @@ project "GEngine2"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "gepch.h"
+    pchsource "GEngine2/scr/gepch.cpp"
 
     files
     {
@@ -27,7 +37,14 @@ project "GEngine2"
     includedirs
     {
         "%{prj.name}/scr",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
+    }
+
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

@@ -1,10 +1,12 @@
+#include "gepch.h"
 #include "Application.h"
 #include "Events/MouseEvent.h"
-#include "Log.h"
+#include "GLFW/glfw3.h"
 
 namespace GEngine {
 	Application::Application() {
-
+		m_window = std::unique_ptr<Window> (Window::Create());
+		m_window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 	}
 
 	Application::~Application() {
@@ -12,20 +14,32 @@ namespace GEngine {
 	}
 
 	void Application::Run() {
-
-		MouseButtonPressedEvent e(3);
-		GEngine_TRACE(e);
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			GEngine_TRACE(e);
-		}
-		if (e.IsInCategory(EventCategoryApplication)) {
-
-			GEngine_TRACE(e);
-		}
 	
+		while (isRunning) {
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-		while (true);
+			m_window->OnUpdate();
+		}
 
+	}
+	void Application::OnEvent(Event& e)
+	{
+		GEngine_CORE_TRACE(e);
+		EvnetDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
+		  
+		/*
+		完全可以用lambda来实现，下面是一个陈宫的实现例
+		dispatcher.Dispatch<WindowCloseEvent>([=](WindowCloseEvent& e)->bool {
+			isRunning = false;
+			return true;
+			});
+		*/
+	}
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		isRunning = false;
+		return true;
 	}
 }

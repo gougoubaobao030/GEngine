@@ -7,6 +7,9 @@
     <Filter Include="GEngine\Events">
       <UniqueIdentifier>{A64FEF47-921D-E34D-7BB1-5374671EBFB2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="scr\GEngine\Application.h">
@@ -33,7 +36,14 @@
     <ClInclude Include="scr\GEngine\Log.h">
       <Filter>GEngine</Filter>
     </ClInclude>
+    <ClInclude Include="scr\GEngine\Window.h">
+      <Filter>GEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="scr\Platform\WindowsWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
     <ClInclude Include="scr\gengine.h" />
+    <ClInclude Include="scr\gepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scr\GEngine\Application.cpp">
@@ -42,8 +52,9 @@
     <ClCompile Include="scr\GEngine\Log.cpp">
       <Filter>GEngine</Filter>
     </ClCompile>
-    <ClCompile Include="scr\GEngine\TheKnowLedge.cpp">
-      <Filter>GEngine</Filter>
+    <ClCompile Include="scr\Platform\WindowsWindow.cpp">
+      <Filter>Platform</Filter>
     </ClCompile>
+    <ClCompile Include="scr\gepch.cpp" />
   </ItemGroup>
 </Project>

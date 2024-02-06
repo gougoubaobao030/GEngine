@@ -1,7 +1,6 @@
 #pragma once
 
-#include <string>
-#include <functional>
+
 
 #include "GEngine/Core.h"
 
@@ -35,7 +34,7 @@ namespace GEngine {
 		
 
 	class WIN_API Event {
-
+		friend class EvnetDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetEventName() const = 0;
@@ -63,7 +62,7 @@ namespace GEngine {
 		
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
-			if (m_event.GetEventType == T::GetStaticEvnetType) {
+			if (m_event.GetEventType() == T::GetStaticEventType()) {
 				m_event.m_Handle = func(*(T*)&m_event);
 				//先&变成地址，再转成Tpointer，再读取里面的值
 				return true;

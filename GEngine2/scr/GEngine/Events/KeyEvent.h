@@ -1,6 +1,6 @@
 #pragma once
 #include "Event.h"
-#include <sstream>
+
 
 namespace GEngine {
 	
@@ -24,7 +24,7 @@ namespace GEngine {
 		KeyPressEvented(int keycode, int keyReapt): KeyEvent(keycode), m_keyReapt(keyReapt){}
 		inline int GetKeyReapt() const { return m_keyReapt; }
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "KeyPressedEvent: " << m_keycode << " & " << m_keyReapt << "Reapted";
 			return ss.str();
@@ -38,7 +38,7 @@ namespace GEngine {
 	public:
 		KeyReleasedEvent(int keycode): KeyEvent(keycode){}
 
-		std::string ToString() {
+		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "KeyReleasedEvent: " << m_keycode;
 			return ss.str();

@@ -1,6 +1,2 @@
-﻿  Application.cpp
-D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Log.h(19,42): warning C4251: 'GEngine::Log::coreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GEngine::Log'
-D:\EngineArt\GEngine2\GEngine2\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
-D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Log.h(20,42): warning C4251: 'GEngine::Log::clientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GEngine::Log'
-D:\EngineArt\GEngine2\GEngine2\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+﻿  WindowsWindow.cpp
   GEngine2.vcxproj -> D:\EngineArt\GEngine2\bin\Debug-windows-x86_64\GEngine2\GEngine2.dll
