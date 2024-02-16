@@ -1,1 +1,23 @@
-﻿  SandBox.vcxproj -> D:\EngineArt\GEngine2\bin\Debug-windows-x86_64\SandBox\SandBox.exe
+﻿cl : command line  warning D9025: overriding '/MTd' with '/MDd'
+  SandBoxApp.cpp
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Log.h(18,42): warning C4251: 'GEngine::Log::coreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GEngine::Log'
+D:\EngineArt\GEngine2\GEngine2\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Log.h(19,42): warning C4251: 'GEngine::Log::clientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'GEngine::Log'
+D:\EngineArt\GEngine2\GEngine2\vendor\spdlog\include\spdlog\details\registry.h(33,31): message : see declaration of 'std::shared_ptr<spdlog::logger>'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Layer.h(11,15): warning C4251: 'GEngine::Layer::m_DebugName': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'GEngine::Layer'
+D:\visualstudio\VC\Tools\MSVC\14.37.32822\include\xstring(5119,29): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\LayerStack.h(22,23): warning C4251: 'GEngine::LayerStack::m_LayerStack': class 'std::vector<GEngine::Layer *,std::allocator<GEngine::Layer *>>' needs to have dll-interface to be used by clients of class 'GEngine::LayerStack'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\LayerStack.h(18,8): message : see declaration of 'std::vector<GEngine::Layer *,std::allocator<GEngine::Layer *>>'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\LayerStack.h(23,33): warning C4251: 'GEngine::LayerStack::m_InsertIterator': class 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>' needs to have dll-interface to be used by clients of class 'GEngine::LayerStack'
+          with
+          [
+              _Ty=GEngine::Layer *
+          ]
+D:\visualstudio\VC\Tools\MSVC\14.37.32822\include\vector(605,36): message : see declaration of 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>'
+          with
+          [
+              _Ty=GEngine::Layer *
+          ]
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Application.h(22,27): warning C4251: 'GEngine::Application::m_window': class 'std::unique_ptr<GEngine::Window,std::default_delete<GEngine::Window>>' needs to have dll-interface to be used by clients of class 'GEngine::Application'
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Application.h(22,8): message : see declaration of 'std::unique_ptr<GEngine::Window,std::default_delete<GEngine::Window>>'
+  SandBox.vcxproj -> D:\EngineArt\GEngine2\bin\Debug-windows-x86_64\SandBox\SandBox.exe

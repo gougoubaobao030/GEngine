@@ -19,13 +19,17 @@ namespace GEngine {
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
+			for (Layer* layer : m_layerStack) {
+				layer->OnUpdate();
+			}
+
 			m_window->OnUpdate();
 		}
 
 	}
 	void Application::OnEvent(Event& e)
 	{
-		GEngine_CORE_TRACE(e);
+		GE_CORE_TRACE(e);
 		EvnetDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
 		  
@@ -36,7 +40,25 @@ namespace GEngine {
 			return true;
 			});
 		*/
+		for (auto it = m_layerStack.end(); it != m_layerStack.begin();)
+		{
+			//GE_CORE_ERROR("e OK");
+			(*(--it))->OnEvent(e);
+			//GE_CORE_ERROR("e1 OK");
+
+			if (e.m_Handle) break;
+		}
 	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		m_layerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverLayer(Layer* layer) {
+		m_layerStack.PushOverLayer(layer);
+	}
+
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
 		isRunning = false;

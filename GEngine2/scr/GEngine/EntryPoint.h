@@ -9,9 +9,9 @@ int main(int agrv, char** agrc) {
 	//std::cout << "GOUGOU Engine WElCOME" << std::endl; //include iostream in gengine.h
 	//std::cout << "GOUGOU Engine WElCOME Say Dont need extern" << std::endl; //include iostream in gengine.h
 	GEngine::Log::Init();
-	GEngine_CORE_INFO("なんとかなる");
-	GEngine_WARN("侮柵簾してください");
-	GEngine_CRITICAL("will be fine");
+	GE_CORE_INFO("なんとかなる");
+	GE_WARN("侮柵簾してください");
+	GE_CRITICAL("will be fine");
 
 
 	auto app = GEngine::CreateApplication();

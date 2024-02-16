@@ -38,6 +38,7 @@ namespace GEngine {
 	public:
 		KeyReleasedEvent(int keycode): KeyEvent(keycode){}
 
+		//没有加 const override的时候 同引数 返回值的情况下竟然优先親class
 		std::string ToString() const override {
 			std::stringstream ss;
 			ss << "KeyReleasedEvent: " << m_keycode;

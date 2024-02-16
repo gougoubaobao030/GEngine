@@ -10,3 +10,6 @@
 //__________Entry_Point___________
 	#include"GEngine/EntryPoint.h"
 //________________________________
+
+#include "GEngine/Layer.h"
+#include "GEngine/LayerStack.h"

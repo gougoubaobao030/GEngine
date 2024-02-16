@@ -12,7 +12,7 @@ namespace GEngine {
 	static bool s_isGLFWInitialized = false;
 
 	static void ErrorCallbackFn(int error, const char* description) {
-		GEngine_CORE_ERROR("GLFW ERROR: { 0 }: { 1 }", error, description);
+		GE_CORE_ERROR("GLFW ERROR: { 0 }: { 1 }", error, description);
 	}
 
 	Window* Window::Create(const WindowProps& props)
@@ -33,7 +33,7 @@ namespace GEngine {
 		m_WindowData.width = props.width;
 		m_WindowData.height = props.height;
 
-		GEngine_CORE_INFO("Create WindowsWindow {0}, ({1}, {2})",
+		GE_CORE_INFO("Create WindowsWindow {0}, ({1}, {2})",
 			m_WindowData.title, m_WindowData.width, m_WindowData.height);
 
 		//init glfw only once
