@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>gepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GE_PLATFORM_WINDOWS;GE_BUILD_DLL;GE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -104,7 +104,7 @@
       <PrecompiledHeaderFile>gepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GE_PLATFORM_WINDOWS;GE_BUILD_DLL;GE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,7 +132,7 @@
       <PrecompiledHeaderFile>gepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>GE_PLATFORM_WINDOWS;GE_BUILD_DLL;GE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>scr;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -155,6 +155,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="scr\GEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="scr\GEngine\Application.h" />
     <ClInclude Include="scr\GEngine\Core.h" />
     <ClInclude Include="scr\GEngine\EntryPoint.h" />
@@ -166,16 +167,20 @@
     <ClInclude Include="scr\GEngine\LayerStack.h" />
     <ClInclude Include="scr\GEngine\Log.h" />
     <ClInclude Include="scr\GEngine\Window.h" />
-    <ClInclude Include="scr\Platform\WindowsWindow.h" />
+    <ClInclude Include="scr\Platform\OpenGl\imgui_impl_opengl3.h" />
+    <ClInclude Include="scr\Platform\OpenGl\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="scr\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="scr\gengine.h" />
     <ClInclude Include="scr\gepch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="scr\GEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="scr\GEngine\Application.cpp" />
     <ClCompile Include="scr\GEngine\Layer.cpp" />
     <ClCompile Include="scr\GEngine\LayerStack.cpp" />
     <ClCompile Include="scr\GEngine\Log.cpp" />
-    <ClCompile Include="scr\Platform\WindowsWindow.cpp" />
+    <ClCompile Include="scr\Platform\OpenGl\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="scr\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="scr\gepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -183,6 +188,12 @@
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\ImGui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

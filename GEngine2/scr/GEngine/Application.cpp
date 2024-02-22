@@ -1,12 +1,18 @@
 #include "gepch.h"
 #include "Application.h"
 #include "Events/MouseEvent.h"
-#include "GLFW/glfw3.h"
+#include "glad/glad.h"
+//#include "GLFW/glfw3.h"
+#include "imgui.h"
 
 namespace GEngine {
+	Application * Application::s_instance = nullptr;
+
 	Application::Application() {
 		m_window = std::unique_ptr<Window> (Window::Create());
 		m_window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
+
+		s_instance = this;
 	}
 
 	Application::~Application() {
@@ -19,11 +25,14 @@ namespace GEngine {
 			glClearColor(1, 0, 1, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
 
+
 			for (Layer* layer : m_layerStack) {
 				layer->OnUpdate();
 			}
 
 			m_window->OnUpdate();
+
+
 		}
 
 	}
@@ -53,10 +62,12 @@ namespace GEngine {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_layerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverLayer(Layer* layer) {
 		m_layerStack.PushOverLayer(layer);
+		layer->OnAttach();
 	}
 
 	bool Application::OnWindowClose(WindowCloseEvent& e)

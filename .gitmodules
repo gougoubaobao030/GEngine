@@ -4,3 +4,6 @@
 [submodule "GEngine2/vendor/GLFW"]
 	path = GEngine2/vendor/GLFW
 	url = https://github.com/thecherno/glfw
+[submodule "GEngine2/vendor/ImGui"]
+	path = GEngine2/vendor/ImGui
+	url = https://github.com/ocornut/imgui

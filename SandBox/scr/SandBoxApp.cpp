@@ -20,6 +20,7 @@ class SandBox : public GEngine::Application {
 public:
 	SandBox() {
 		PushLayer(new SampleLayer);
+		PushOverLayer(new GEngine::ImGuiLayer);
 	}
 
 	~SandBox() {

@@ -45,11 +45,14 @@
     <ClInclude Include="scr\GEngine\Window.h">
       <Filter>GEngine</Filter>
     </ClInclude>
-    <ClInclude Include="scr\Platform\WindowsWindow.h">
+    <ClInclude Include="scr\Platform\Windows\WindowsWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="scr\gengine.h" />
     <ClInclude Include="scr\gepch.h" />
+    <ClInclude Include="scr\GEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="scr\Platform\OpenGl\imgui_impl_opengl3.h" />
+    <ClInclude Include="scr\Platform\OpenGl\imgui_impl_opengl3_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="scr\GEngine\Application.cpp">
@@ -64,9 +67,11 @@
     <ClCompile Include="scr\GEngine\Log.cpp">
       <Filter>GEngine</Filter>
     </ClCompile>
-    <ClCompile Include="scr\Platform\WindowsWindow.cpp">
+    <ClCompile Include="scr\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="scr\gepch.cpp" />
+    <ClCompile Include="scr\GEngine\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="scr\Platform\OpenGl\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 </Project>

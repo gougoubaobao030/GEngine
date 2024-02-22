@@ -13,9 +13,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 --Include directories relative to root folder(solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "GEngine2/vendor/GLFW/include"
+IncludeDir["Glad"] = "GEngine2/vendor/Glad/include"
+IncludeDir["ImGui"] = "GEngine2/vendor/ImGui"
 
 --include premake.lua file of glfw
 include "GEngine2/vendor/GLFW"
+include "GEngine2/vendor/Glad"
+include "GEngine2/vendor/ImGui"
 
 project "GEngine2"
     location "GEngine2"
@@ -38,12 +42,16 @@ project "GEngine2"
     {
         "%{prj.name}/scr",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 

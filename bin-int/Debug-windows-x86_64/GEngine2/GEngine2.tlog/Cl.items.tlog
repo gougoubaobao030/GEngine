@@ -1,6 +1,8 @@
+D:\EngineArt\GEngine2\GEngine2\scr\GEngine\ImGui\ImGuiLayer.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\ImGuiLayer.obj
 D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Application.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\Application.obj
 D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Layer.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\Layer.obj
 D:\EngineArt\GEngine2\GEngine2\scr\GEngine\LayerStack.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\LayerStack.obj
 D:\EngineArt\GEngine2\GEngine2\scr\GEngine\Log.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\Log.obj
-D:\EngineArt\GEngine2\GEngine2\scr\Platform\WindowsWindow.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\WindowsWindow.obj
+D:\EngineArt\GEngine2\GEngine2\scr\Platform\OpenGl\imgui_impl_opengl3.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\imgui_impl_opengl3.obj
+D:\EngineArt\GEngine2\GEngine2\scr\Platform\Windows\WindowsWindow.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\WindowsWindow.obj
 D:\EngineArt\GEngine2\GEngine2\scr\gepch.cpp;D:\EngineArt\GEngine2\bin-int\Debug-windows-x86_64\GEngine2\gepch.obj

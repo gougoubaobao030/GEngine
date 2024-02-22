@@ -15,6 +15,8 @@ namespace GEngine {
 		void OnEvent(Event& e);
 		void PushLayer(Layer * layer);
 		void PushOverLayer(Layer * layer);
+		inline Window& GetWindow() { return *m_window; }
+		inline static Application& GetApp() { return *s_instance; };
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 	
@@ -22,6 +24,8 @@ namespace GEngine {
 		std::unique_ptr<Window> m_window;
 		bool isRunning = true;
 		LayerStack m_layerStack;
+
+		static Application* s_instance;
 	};
 
 	//to be defined in CLinet;
